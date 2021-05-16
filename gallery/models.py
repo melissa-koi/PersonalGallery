@@ -27,4 +27,11 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
-    
+    def delete_image(self):
+        self.delete()
+
+    @classmethod
+    def update_image(cls, id, name, description, image_url, location, category):
+        update = cls.objects.filter(id=id).update(name=name, description=description, image_url=image_url, location=location, category=category)
+        return update
+
