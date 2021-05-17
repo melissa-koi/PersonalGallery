@@ -7,13 +7,11 @@
     <h1 class="text-center">Text Centered</h1>
 </div>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-3" >
-            <div class="card bg-dark text-white">
-                <div class="card-header">
-                    Locations
-                </div>
+        <div class="col-md-2" style="margin-top:30px">
+            <div class="card bg-dark text-white m-3" >
+                <div class="card-header">Locations</div>
                 <ul class="list-group list-group-flush" >
                     <li class="list-group-item" style="background-color: grey;">
                         <a href="{% url 'home' %}" style="text-decoration:none; color:black; font-style: italics;font-weight: bolder;">All Images</a>
@@ -29,10 +27,10 @@
             </div>
         </div>
 
-        <div class="col-md-9">
+        <div class="col-md-10">
             <div class="card-group">
             {% for gallery in galleries %}
-                <div class="card" style="min-width: 18rem; max-width:18rem ;margin-top: 30px; margin-bottom: 30px; margin-right: 3rem; border:1px solid lightgrey;">
+                <div class="card" style="min-width: 17rem; max-width:17rem ;margin-top: 30px; margin-bottom: 30px; margin-right: 3rem; border:1px solid lightgrey;">
                     <img src="{{ gallery.image_url.url }}" style="height: 14rem;" class="card-img-top" alt="Image">
                     <div class="card-body">
                         <p class="card-">Category: {{gallery.category.name}}</p>
