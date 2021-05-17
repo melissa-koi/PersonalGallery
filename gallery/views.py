@@ -1,9 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Location, Category, Image
 # Create your views here.
 
 def home(request):
-    gallery = Image.objects.all()
+
+    category = request.GET.get('category')
+    if category is None:
+        gallery = Image.objects.all()
+    else:
+        gallery = Image.objects.filter(category__name=category)
+
+    
     location = Location.objects.all()
-    category = Category.objects.all()
-    return render(request, 'home.html', {"galleries": gallery, "location": location, "category": category})
+    categories = Category.objects.all()
+
+
+
+    return render(request, 'home.html', {"galleries": gallery, "location": location, "categories": categories})

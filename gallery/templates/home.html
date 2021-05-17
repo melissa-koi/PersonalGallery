@@ -8,18 +8,41 @@
 </div>
 
 <div class="container">
-    <div class="card-group">
-{%for gallery in galleries%}
-    <div class="card" style="min-width: 18rem; max-width:18rem ;margin-top: 30px; margin-bottom: 30px; margin-right: 3rem; border:1px solid lightgrey">
-        <img src="{{ gallery.image_url.url }}" style="height: 14rem;" class="card-img-top" alt="Image">
-        <div class="card-body">
-            <p class="card-">Category: {{gallery.category.name}}</p>
-            <p class="card-">Location: {{gallery.location.name}}</p>
-        </div>
-        <a href="#" class="btn btn-outline-secondary">View</a>
-    </div>
+    <div class="row">
+        <div class="col-md-3">
 
-{% endfor %}
-    </div>
-</div>
-{% endblock %}
+            <div class="card bg-dark text-white">
+                <div class="card-header">
+                    Categories
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <a href="{% url 'home' %}">All</a>
+                    </li>
+                    {% for category in categories %}
+                    <li class=" list-group-item">
+                        <a href="{% url 'home' %}?category={{category.name}}">
+                            {{category.name}}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-9">
+                <div class="card-group">
+            {%for gallery in galleries%}
+                <div class="card" style="min-width: 18rem; max-width:18rem ;margin-top: 30px; margin-bottom: 30px; margin-right: 3rem; border:1px solid lightgrey">
+                    <img src="{{ gallery.image_url.url }}" style="height: 14rem;" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <p class="card-">Category: {{gallery.category.name}}</p>
+                        <p class="card-">Location: {{gallery.location.name}}</p>
+                    </div>
+                    <a href="#" class="btn btn-outline-secondary">View</a>
+                </div>
+
+            {% endfor %}
+                </div>
+            </div>
+            {% endblock %}
