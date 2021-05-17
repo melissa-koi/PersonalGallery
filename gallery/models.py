@@ -5,9 +5,6 @@ from django.db import models
 class Location(models.Model):
     name = models.CharField(max_length=30)
 
-    def __str__(self):
-        return self.name
-
     def save(self):
         self.save()
 
@@ -17,13 +14,13 @@ class Location(models.Model):
     def update(self, update):
         self.name = update
         self.save()
+
+    def __str__(self):
+        return self.name
 
 class Category(models.Model):
     name = models.CharField(max_length=30)
 
-    def __str__(self):
-        return self.name
-
     def save(self):
         self.save()
 
@@ -34,7 +31,9 @@ class Category(models.Model):
         self.name = update
         self.save()
 
-        
+    def __str__(self):
+        return self.name
+
 class Image(models.Model):
     name = models.CharField(max_length=30)
     description = models.TextField()
