@@ -8,12 +8,24 @@ class Location(models.Model):
     def __str__(self):
         return self.name
 
+    def save(self):
+        self.save()
+
+    def delete(self):
+        self.delete()
+
 class Category(models.Model):
     name = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
 
+    def save(self):
+        self.save()
+
+    def delete(self):
+        self.delete()
+        
 class Image(models.Model):
     name = models.CharField(max_length=30)
     description = models.TextField()
@@ -39,3 +51,7 @@ class Image(models.Model):
     def get_image_by_id(cls, id):
         image = cls.objects.filter(id = id).all()
         return image
+
+    @classmethod
+    def filter_by_location(cls, location):
+        loc = cls.object.filter(location = location).all()
