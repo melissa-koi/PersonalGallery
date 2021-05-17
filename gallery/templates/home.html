@@ -9,20 +9,19 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
-
+        <div class="col-md-3" >
             <div class="card bg-dark text-white">
                 <div class="card-header">
-                    Categories
+                    Locations
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <a href="{% url 'home' %}">All</a>
+                <ul class="list-group list-group-flush" >
+                    <li class="list-group-item" style="background-color: grey;">
+                        <a href="{% url 'home' %}" style="text-decoration:none; color:black; font-style: italics;font-weight: bolder;">All Images</a>
                     </li>
-                    {% for category in categories %}
-                    <li class=" list-group-item">
-                        <a href="{% url 'home' %}?category={{category.name}}">
-                            {{category.name}}
+                    {% for location in locations %}
+                    <li class="list-group-item" style="background-color:grey;">
+                        <a href="{% url 'home' %}?location={{location.name}}" style="text-decoration:none; color:black">
+                            {{location.name}}
                         </a>
                     </li>
                     {% endfor %}
@@ -32,8 +31,8 @@
 
         <div class="col-md-9">
             <div class="card-group">
-            {%for gallery in galleries %}
-                <div class="card" style="min-width: 18rem; max-width:18rem ;margin-top: 30px; margin-bottom: 30px; margin-right: 3rem; border:1px solid lightgrey">
+            {% for gallery in galleries %}
+                <div class="card" style="min-width: 18rem; max-width:18rem ;margin-top: 30px; margin-bottom: 30px; margin-right: 3rem; border:1px solid lightgrey;">
                     <img src="{{ gallery.image_url.url }}" style="height: 14rem;" class="card-img-top" alt="Image">
                     <div class="card-body">
                         <p class="card-">Category: {{gallery.category.name}}</p>
