@@ -35,3 +35,7 @@ class Image(models.Model):
         update = cls.objects.filter(id=id).update(name=name, description=description, image_url=image_url, location=location, category=category)
         return update
 
+    @classmethod
+    def get_image_by_id(cls, id):
+        image = cls.objects.filter(id = id).all()
+        return image
