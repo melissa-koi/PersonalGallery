@@ -7,11 +7,19 @@
     <h1 class="text-center">Text Centered</h1>
 </div>
 
-{%for gallery in galleries%}
 <div class="container">
-    <div class="row">
-        <img src="{{ gallery.image_url.url }}" class="img-responsive" alt="Image">
+    <div class="card-group">
+{%for gallery in galleries%}
+    <div class="card" style="min-width: 18rem; max-width:18rem ;margin-top: 30px; margin-bottom: 30px; margin-right: 3rem; border:1px solid lightgrey">
+        <img src="{{ gallery.image_url.url }}" style="height: 14rem;" class="card-img-top" alt="Image">
+        <div class="card-body">
+            <p class="card-">Category: {{gallery.category.name}}</p>
+            <p class="card-">Location: {{gallery.location.name}}</p>
+        </div>
+        <a href="#" class="btn btn-outline-secondary">View</a>
+    </div>
+
+{% endfor %}
     </div>
 </div>
-{% endfor %}
 {% endblock %}
