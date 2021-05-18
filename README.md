@@ -2,7 +2,7 @@
 ### By Melissa Wangui
 
 ## Description
-This is an application that provides a platform for one to display their photos for others to see.
+This is an application that provides a platform for one to display their photos for others to see.You can also filter the images using their category and location.
 
 ##Demo
 This is how the webpage looks like on startup:
