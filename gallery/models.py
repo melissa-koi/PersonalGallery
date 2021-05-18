@@ -70,3 +70,4 @@ class Image(models.Model):
     def search_by_category(cls, search_term):
         cat = cls.objects.filter(category__name__icontains = search_term)
         return cat
+
