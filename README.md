@@ -26,6 +26,6 @@ Here are the steps to follow:
 After installing the application you can run the tests using the command -python3 manage.py test gallery- on the virtual environment.
 
 Here is an image of the passed tests of this application
-<img src="media/images"></img>
+![Screenshot from 2021-05-18 08-54-10](https://user-images.githubusercontent.com/78697374/118607597-6f5eff80-b7c1-11eb-8ab2-65ee52792a4c.png)
 ## [Link]( https://m-gallery123.herokuapp.com/ ) to live webpage
 ## [License](https://github.com/melissa-koi/PersonalGallery/blob/main/LICENSE)
