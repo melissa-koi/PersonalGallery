@@ -4,7 +4,7 @@
 ## Description
 This is an application that provides a platform for one to display their photos for others to see.You can also filter the images using their category and location.
 
-##Demo
+## Demo
 This is how the webpage looks like on startup:
 ![Screenshot from 2021-05-18 08-54-24](https://user-images.githubusercontent.com/78697374/118608221-1f346d00-b7c2-11eb-856d-ff7a9911ab12.png)
 
@@ -13,6 +13,10 @@ This is how the webpage looks like on startup:
 * Pycharm
 * Django
 * Virtual Environment
+
+## Technologies used
+* Pep8
+* Jinja templating
 
 ## Installing
 Here are the steps to follow:
