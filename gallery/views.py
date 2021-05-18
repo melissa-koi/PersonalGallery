@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Location, Category, Image
 # Create your views here.
 
+
 def home(request):
     location = request.GET.get('location')
     if location is None:
@@ -14,9 +15,11 @@ def home(request):
 
     return render(request, 'home.html', {"galleries": gallery, "locations": location, "categories": categories})
 
+
 def viewPhoto(request, pk):
     photo =Image.objects.get(id=pk)
     return render(request, 'photo.html', {"photo": photo})
+
 
 def search_results(request):
     if 'category' in request.GET and request.GET["category"]:
