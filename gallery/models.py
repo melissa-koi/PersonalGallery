@@ -22,8 +22,6 @@ class Location(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=30)
 
-    def save(self):
-        self.save()
 
     def delete(self):
         self.delete()
